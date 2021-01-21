@@ -28,7 +28,7 @@ public class TweetController {
 
     @GetMapping(value="/getTopTenHashTags")
     public ResponseEntity<List<String>> getTopTenHashTags(){
-        List<Tweets> tweetsList = tweetRepository.findAll();
+        List<String> tweetsList = tweetRepository.getAllTweets();
         List<String> hasTags = tweetService.getTopTenHashTags(tweetsList);
         return ResponseEntity.ok(hasTags);
     }

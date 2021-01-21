@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface TweetService {
 
-    List<String> getTopTenHashTags(List<Tweets> tweetsList);
+    List<String> getTopTenHashTags(List<String> tweetsList);
 }

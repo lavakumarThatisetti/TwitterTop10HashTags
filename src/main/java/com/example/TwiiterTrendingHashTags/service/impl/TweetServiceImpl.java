@@ -15,10 +15,10 @@ public class TweetServiceImpl implements TweetService {
     private HashMap<String, Integer> freqMap=new HashMap<>();
 
     @Override
-    public List<String> getTopTenHashTags(List<Tweets> tweetsList) {
+    public List<String> getTopTenHashTags(List<String> tweetsList) {
         List<String> result=new ArrayList<>();
-        for(Tweets tweet:tweetsList) {
-            Matcher m = HASH_TAG.matcher(tweet.getTweet());
+        for(String tweet:tweetsList) {
+            Matcher m = HASH_TAG.matcher(tweet);
             while (m.find()) {
                 String tag = m.group(); //m.group(1) to exclude #
                 freqMap.put(tag, freqMap.getOrDefault(tag,0)+1);
